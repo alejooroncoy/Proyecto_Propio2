@@ -1,0 +1,59 @@
+@import '../Vars.scss';
+.categories__title
+{
+    font-size: 35px;
+    margin-left: 10px;
+    color: white;
+}
+.body
+{
+    background-image: url('/src/assets/static/playa.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.body_2
+{
+    background-image: url('/src/assets/static/de_noche_2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.switch
+{
+    float: right;
+    position: relative;
+    transform: rotate(89deg);
+    bottom: 27rem;
+    left: 85px;
+    & label 
+    {
+        cursor: $cursor_cer;
+    }
+    & label .lever 
+    {
+        width: 100px;
+    }
+}
+label 
+{
+    color: $letter_color;
+    font-weight: bold;
+    font-size: 20px;
+}
+.switch label input[type=checkbox]:checked+.lever:after
+{
+    background-color: black;
+    left: 85px;
+}
+.switch label input[type=checkbox]:checked+.lever
+{
+    background-color: $letter_color;
+}
+@media only screen and (max-width: 700px)
+{
+    .body 
+    {
+        background-image: url('/src/assets/static/fondo_celular.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

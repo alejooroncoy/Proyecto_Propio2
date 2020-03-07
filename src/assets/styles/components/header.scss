@@ -1,0 +1,63 @@
+@import '../Vars.scss';
+nav .brand-logo
+{
+    font-size: 3.05rem;
+    cursor: $cursor_cer;
+}
+.left.hide-on-med-and-down li a
+{
+    color: $letter_color;
+    cursor: $cursor_cer;
+    &:hover 
+    {
+        background-color: rgba(255,255,255,.4);
+    }
+}
+.right.hide-on-med-and-down li > a 
+{
+    color: $letter_color;
+    cursor: $cursor_cer;
+    &:hover 
+    {
+        background-color: rgba(255,255,255,.4);
+    }
+}
+.btn-floating i
+{
+    color: $letter_color;
+    cursor: $cursor_cer;
+    border-radius: 50%;
+}
+.btn-floating.btn-large
+{
+    border: 1.9px solid $letter_color;
+}
+.sidenav
+{
+    width: 303px;
+}
+.div_1
+{
+    background-color: black;
+    float: right;
+    border-radius: 100%;
+    border: .2px $letter_color solid;
+}
+small
+{
+  position: relative;
+    top: -25px;
+    right: 40px;
+    margin: 0 -0.65em;
+    padding: 0px 12px;
+    color: black;
+    border-radius: 50%;
+    background-color: $letter_color;
+    box-shadow: 0 0 10px 0 $letter_color;
+    font-size: 24px;
+}
+.span
+{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,27 @@
+@import '../Vars.scss';
+.letter 
+{
+    color: $letter_color;
+}
+.footer-copyright
+{
+    display: flex;
+    justify-content: space-between;
+}
+.right-footer
+{
+    margin-right: 31px;
+    cursor: $cursor_cer;
+}
+.left-footer
+{
+    margin-left: 31px;
+}
+.cer
+{
+    cursor: $cursor_cer;
+    & > li a
+    {
+        cursor: $cursor_cer;
+    }
+}
