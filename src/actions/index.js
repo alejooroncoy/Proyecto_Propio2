@@ -18,3 +18,7 @@ export const getVideos = payload => ({
     type: 'GET_VIDEOS',
     payload
 })
+export const borrarSame = payload => ({
+    type: 'BORRAR_SAME',
+    payload
+})

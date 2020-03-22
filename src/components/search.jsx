@@ -18,8 +18,8 @@ const search = props => {
     return(
         <section className="section">
                 <div className="col s12">
-                    <div className="row">
-                         <div className="input-field col s12 m6 offset-l4 l4">
+                    <div className="responsi">
+                         <div className="input-field">
                          <i className="material-icons prefix">search</i>
                             <input 
                             id='search' 

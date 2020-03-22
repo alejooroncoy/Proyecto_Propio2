@@ -4,8 +4,7 @@ import Search from '../components/search';
 import Catalogo from '../components/catalogo';
 import Products from '../components/products';
 import Conteners from '../components/conteners';
-import '../assets/styles/components/home.scss'
-import { isDBf } from '../actions';
+import '../assets/styles/components/home.scss';
 const Home = props => {
     document.addEventListener("visibilitychange", cambio)
     function cambio () {
@@ -30,7 +29,9 @@ const Home = props => {
         return searching.length > 0 ?
             (
                 <div className="body" id="body">
+                 <section className="responsiV">
                 <Search/>
+                </section>
                 <Catalogo text="Resultados:">
                       <Conteners>
                           {
@@ -55,7 +56,9 @@ const Home = props => {
               </div> 
         ): (
             <div className="body" id="body">
-          <Search/>
+            <section className="responsiV">
+                <Search/>
+            </section>
           <Catalogo text="Nuestros productos:">
                 <Conteners>
                     {
@@ -82,7 +85,9 @@ const Home = props => {
     }
     return(
         <div className="body" id="body">
-          <Search/>
+           <section className="responsiV">
+                <Search/>
+            </section>
           <Catalogo text="Nuestros productos:">
                 <Conteners>
                     {

@@ -1,13 +1,20 @@
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
+import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-const Layout = withRouter(({ children, location }) => (
+const Layout = withRouter((props) => {
+  const {children,location} = props;
+  return(
   <div className='App'>
-    <Header location={location} />
+    <Header location={location}/>
     { children }
     <Footer />
   </div>
-));
-
-export default Layout;
+)});
+const mapStateToProps = state => {
+  return {
+      shopping_cart: state.shopping_cart,
+  }
+}
+export default connect(mapStateToProps,null)(Layout);

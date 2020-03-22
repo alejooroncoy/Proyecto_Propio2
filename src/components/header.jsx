@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/components/header.scss';
 import Products_comprados from './products_comprados';
@@ -6,12 +6,12 @@ import '../assets/styles/App.scss';
 
 const Header = props => {
     const { shopping_cart } = props;
-    const shopping_cart_v = Object.keys(shopping_cart).length;
-     const sumatoria = (users, userspe) => users + Number(userspe.cost * userspe.numero);
-    const total_costo = shopping_cart.reduce(sumatoria,0);
+    const shopping_cart_v = shopping_cart.length;
     //Palabras
     const productos = 'productos';
     const producto = 'producto';
+    const sumatoria = (users, userspe) => users + Number(userspe.cost * userspe.numero);
+    const total_costo = shopping_cart.reduce(sumatoria,0);
     const ningun = 'ningun';//
     //Inicio(Materialize)
     document.addEventListener('DOMContentLoaded', function() {
@@ -21,10 +21,10 @@ const Header = props => {
             inDuration: 400,
             outDuration: 400
         });
-      });//
+      });
     return(
-        <header>
-            <nav className="black">
+        <header className="">
+            <nav className="black headerF">
                 <a href="#" className="brand-logo center">Cervecería Wilmer</a>
                     <ul className="left hide-on-med-and-down">
                         <li><a href="#">Somos la primera licorería online netamente Peruana!!</a></li>
@@ -69,10 +69,13 @@ const Header = props => {
                         )
                         }
                         {
-                            total_costo > 0 ?
-                            <span className="span">{`El subtotal es = ${total_costo} soles`}</span>:
-                            <span className="span">No hay productos</span>
-                        }
+                            shopping_cart.length > 0 ?
+                                <a href="#">
+                                    {total_costo}
+                                </a>
+                                    :
+                            <a href="/">No tienes ningun producto</a>
+                        } 
                         </li>
                 </ul>
                 </div>

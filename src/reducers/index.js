@@ -1,5 +1,4 @@
 const reducer = (state, action) => {
-    const exist = state.shopping_cart.find(item => item.id === action.payload.id);
     switch(action.type)
     {
         case 'GET_TO_CAR':
@@ -21,6 +20,13 @@ const reducer = (state, action) => {
             return{
                 ...state,
                 shopping_cart: [...state.shopping_cart, action.payload],
+            }
+        case 'BORRAR_SAME':
+            return{
+                ...state,
+                shopping_cart: state.shopping_cart.sort((a,b) =>{
+                    return a.id - b.id
+                }),
             }
         case "GET_VIDEOS":
                 return {

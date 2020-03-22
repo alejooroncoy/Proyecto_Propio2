@@ -4,6 +4,12 @@ nav .brand-logo
     font-size: 3.05rem;
     cursor: $cursor_cer;
 }
+.headerF
+{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
 .left.hide-on-med-and-down li a
 {
     color: $letter_color;
@@ -38,10 +44,12 @@ nav .brand-logo
 }
 .div_1
 {
-    background-color: black;
-    float: right;
-    border-radius: 100%;
-    border: .2px $letter_color solid;
+    margin-top: 5rem;
+    margin-right: 1rem;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
 }
 small
 {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getToCar, isDBf} from '../actions';
 import swal from '@sweetalert/with-react'

@@ -10,6 +10,7 @@
     background-image: url('/src/assets/static/playa.jpg');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .body_2
 {
@@ -48,12 +49,20 @@ label
 {
     background-color: $letter_color;
 }
-@media only screen and (max-width: 700px)
+.responsiV 
 {
-    .body 
-    {
-        background-image: url('/src/assets/static/fondo_celular.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+    padding-right: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
 }
+// @media only screen and (max-width: 700px)
+// {
+//     .body 
+//     {
+//         background-image: url('/src/assets/static/fondo_celular.jpg');
+//         background-position: center;
+//         background-repeat: no-repeat;
+//     }
+// }

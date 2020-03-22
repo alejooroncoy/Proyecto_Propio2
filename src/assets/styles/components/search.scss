@@ -15,4 +15,11 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label
 {
     color: $letter_color;
 }
-
+.responsi
+{
+    display: flex;
+}
+.input-field
+{
+    width: 80vh;
+}
