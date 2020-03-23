@@ -7,14 +7,12 @@ cache:
   directories:
     - ~/.npm
     - node_modules
+git:
+  depth: 3
 
 install: 
-  - yarn add -g firebase-tools
-
-script:
-  - echo "deploying"
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+  - yarn build
+  
 notifications:
   email:
     recipients:
@@ -24,8 +22,7 @@ notifications:
 
 deploy:
   provider: firebase
-  skip-cleanup: true
-  keep-history: true
-  local-dir: dist/
-  on:
-    branch: master
+  token:
+    secure: $FIREBASE_TOKEN
+  project: dist/
+  message: "Hola:3"
