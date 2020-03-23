@@ -9,9 +9,11 @@ cache:
     - node_modules
 git:
   depth: 3
-
-install: 
+script:
+  - echo "deploying"
   - yarn build
+install: 
+  - yarn add -g firebase-tools
   
 notifications:
   email:
