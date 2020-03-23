@@ -9,8 +9,8 @@ cache:
     - node_modules
 git:
   depth: 3
-install: 
-  - npm install -g firebase-tools
+script:
+  - yarn build
 notifications:
   email:
     recipients:
