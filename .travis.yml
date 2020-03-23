@@ -9,7 +9,7 @@ cache:
     - node_modules
 
 install: 
-  -npm install -g firebase
+  - yarn add -g firebase-tools
 
 script:
   - echo "deploying"
