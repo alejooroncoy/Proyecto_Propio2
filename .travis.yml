@@ -22,5 +22,5 @@ deploy:
   provider: firebase
   token:
     secure: $FIREBASE_TOKEN
-  project: cervew-eb41d
+  project: cerveW
   message: "Hola:3"
