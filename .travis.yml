@@ -21,11 +21,3 @@ notifications:
       - adoa2705@gmail.com
   on_success: always
   on_failure: always
-
-deploy:
-  provider: firebase
-  skip-cleanup: true
-  keep-history: true
-  local-dir: dist/
-  on:
-    branch: master
