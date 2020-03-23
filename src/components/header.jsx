@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import '../assets/styles/components/header.scss';
 import Products_comprados from './products_comprados';
 import '../assets/styles/App.scss';
-
+import Icon from '../assets/static/user-icon.png'
 const Header = props => {
     const { shopping_cart } = props;
     const shopping_cart_v = shopping_cart.length;
@@ -22,6 +22,7 @@ const Header = props => {
             outDuration: 400
         });
       });
+    
     return(
         <header className="">
             <nav className="black headerF">
@@ -50,7 +51,7 @@ const Header = props => {
                         <div className="background">
                             <img src="https://picsum.photos/400/500" alt="image"/>
                         </div>
-                        <a href="#user"><img className="circle" src='src/assets/static/user-icon.png'/></a>
+                        <a href="#user"><img className="circle" src={Icon}/></a>
                         <a><span className="black-text name">{`Tienes ${shopping_cart_v > 0 ? shopping_cart_v: ningun} ${shopping_cart_v < 2 ? producto: productos} en el carrito.`}</span>
                     </a>
                         <a><p className="email"></p></a>

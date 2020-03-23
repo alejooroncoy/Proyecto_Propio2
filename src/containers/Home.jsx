@@ -5,6 +5,8 @@ import Catalogo from '../components/catalogo';
 import Products from '../components/products';
 import Conteners from '../components/conteners';
 import '../assets/styles/components/home.scss';
+import cheet from 'cheet.js';
+import Fiesta from '../assets/static/aguaMarina.mp3';
 const Home = props => {
     document.addEventListener("visibilitychange", cambio)
     function cambio () {
@@ -19,6 +21,13 @@ const Home = props => {
              title.innerHTML = `No te vayassss!! &#128557&#128559`
          }
    };
+   const cancion = new Audio(Fiesta);
+   cheet('f i e s t a', () => {
+       cancion.play();
+   });
+   cheet('f i n', () => {
+       cancion.pause();
+   })
     const {products, shopping_cart, searching,isDB} = props;
     const cheked = () => {
        document.querySelector("#body").classList.toggle('body_2');
@@ -59,27 +68,12 @@ const Home = props => {
             <section className="responsiV">
                 <Search/>
             </section>
-          <Catalogo text="Nuestros productos:">
+          <Catalogo>
+                <h1>Uppps! :'(</h1>
                 <Conteners>
-                    {
-                        products.length !== 0 &&
-                        products.map(item => 
-                            <Products key={item.id} {...item} />
-                        )
-                    }
+                    <h2 className="">Disculpe no encontramos ningún resultado:(</h2>
                 </Conteners>
           </Catalogo>
-           <div className="switch">
-                <label>
-                        De Día
-                    <input id="Dia_Noche" 
-                    type="checkbox"
-                    onClick={cheked}
-                    />
-                    <span className="lever"></span>
-                     De noche
-                </label>
-            </div>
         </div> 
         )
     }

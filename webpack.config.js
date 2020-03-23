@@ -53,20 +53,19 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(mp3)$/,
+                test: /\.(ogg|mp3|wav|mpe?g)$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'assets/[hash].[ext]'
+                            name: 'assets/[hash].[ext]',
                         }
                     }
                 ]
-            }
+            },
         ]
     },
     devServer: {
-        inline: true,
         port: 8282,
         historyApiFallback: true,
     },
@@ -106,16 +105,44 @@ module.exports = {
                 "apple-mobile-web-app-capable": 'yes',
             }
         }),
-        //  new WorboxWebpack.GenerateSW({
-        //     runtimeCaching: [
-        //         {
-        //             urlPattern: new RegExp('https://proyect-cerv.web.app/'),
-        //             handler: 'NetworkFirst',
-        //             options: {
-        //                 cacheName: 'api'
-        //             },
-        //         },
-        //     ]
-        // }),
+         new WorboxWebpack.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+            runtimeCaching: [
+                {
+                    urlPattern: new RegExp('https://cervew-eb41d.firebaseapp.com/'),
+                    handler: 'NetworkFirst',
+                    options: {
+                        cacheName: 'api'
+                    },
+                },
+                {
+                    urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+
+                    handler: 'CacheFirst',
+            
+                    options: {
+
+                      cacheName: 'images',
+            
+                      expiration: {
+                        maxEntries: 15,
+                      },
+                    },
+                },
+                {
+                    urlPattern: /\.(?:ogg|mp3|wav|mpe?g)$/,
+                    handler: 'CacheFirst',
+            
+                    options: {
+                      cacheName: 'songs',
+            
+                      expiration: {
+                        maxEntries: 2,
+                            },
+                    }
+                },
+            ]
+        }),
     ] 
 }

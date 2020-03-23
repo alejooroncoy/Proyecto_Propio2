@@ -1,0 +1,30 @@
+language: node_js
+
+node_js: 
+  - '13'
+
+cache: 
+  directories:
+    - ~/.npm
+    - node_modules
+
+install: 
+  -yarn add -g firebase
+
+script:
+  - echo "deploying"
+after_succes:
+  - firebase deploy --token $FIREBASE_TOKEN
+notifications:
+  email:
+    recipients:
+      - adoa2705@gmail.com
+  on_success: always
+  on_failure: always
+
+deploy:
+  skip-cleanup: true
+  keep-history: true
+  local-dir: dist/
+  on:
+    branch: master
