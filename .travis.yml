@@ -13,7 +13,8 @@ script:
   - yarn build
 install: 
   - yarn add -g firebase-tools
-  
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
 notifications:
   email:
     recipients:
@@ -27,3 +28,4 @@ deploy:
     secure: $FIREBASE_TOKEN
   project: dist/
   message: "Hola:3"
+  local-dir: dist/
