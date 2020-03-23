@@ -24,6 +24,6 @@ deploy:
   provider: firebase
   token:
     secure: $FIREBASE_TOKEN
-  project: "./dist"
+  project: "dist/"
   message: "Hola:3"
   local-dir: dist/
