@@ -10,9 +10,10 @@ cache:
 git:
   depth: 3
 script:
+  - echo "deploying"
   - yarn build
 after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+  - firebase deploy --token $FIREBASE_TOKEN  
 notifications:
   email:
     recipients:
