@@ -22,3 +22,7 @@ export const borrarSame = payload => ({
     type: 'BORRAR_SAME',
     payload
 })
+export const getProduct = payload => ({
+    type: 'GET_PRODUCT',
+    payload
+});

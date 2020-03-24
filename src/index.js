@@ -4,12 +4,13 @@ import {createStore, compose } from 'redux';
 import {Provider} from 'react-redux';
 import reducer from './reducers';
 import App from './routers/App';
-import Cristal from './assets/static/cristal-homologado.jpg';
-import Corona from './assets/static/corona-homologado.jpg';
-import Cusqueña from './assets/static/cusqueña-homologado.jpg';
-import Pilsen from './assets/static/pilsen.png';
+import Cristal from './assets/static/cristal-homologado.png';
+import Corona from './assets/static/corona-homologado.png';
+import Cusqueña from './assets/static/cusqueña-homologado.png';
+import Pilsen from './assets/static/pilsen-homologado.png';
 const initialState = {
     "shopping_cart": [],
+    "products_R": [],
     'isDB': false,
     "searching": [],
     "products": [
@@ -19,6 +20,7 @@ const initialState = {
             'cover': Cristal,
             'description': 'Unidos Podemos!',
             "cost": 35,
+            'cantidad': 1,
         },
         {
             'id': 10,
@@ -26,6 +28,7 @@ const initialState = {
             'cover': Corona,
             'description': 'Para refrescar tus momentos',
             'cost': 45,
+            'cantidad': 1,
         },
         {
             'id': 15,
@@ -33,6 +36,7 @@ const initialState = {
             'cover': Cusqueña,
             'description': 'Hechos con maestría',
             'cost': 40,
+            'cantidad': 1,
         },
         {
             'id': 20,
@@ -40,6 +44,7 @@ const initialState = {
             'cover': Pilsen,
             'description': 'Unidos por la amistad',
             'cost': 38,
+            'cantidad': 1,
         }
     ]
 }

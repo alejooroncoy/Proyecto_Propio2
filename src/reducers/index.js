@@ -35,6 +35,11 @@ const reducer = (state, action) => {
                         item.title.toLowerCase().includes(action.payload.toLowerCase())
                         ),
                 };
+        case 'GET_PRODUCT':
+            return {
+                ...state,
+                products_R: state.shopping_cart.find(item => item.id === Number(action.payload)) ||state.products.find(item => item.id === Number(action.payload)) || [] 
+            }
         default:
             return state;
     }

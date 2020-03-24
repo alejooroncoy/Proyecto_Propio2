@@ -106,8 +106,10 @@ module.exports = {
             }
         }),
          new WorboxWebpack.GenerateSW({
-            clientsClaim: true,
+            offlineGoogleAnalytics: true,
             skipWaiting: true,
+            clientsClaim: true,
+            swDest: 'service-worker.js',
             runtimeCaching: [
                 {
                     urlPattern: new RegExp('https://cervew-eb41d.firebaseapp.com/'),
@@ -119,7 +121,7 @@ module.exports = {
                 {
                     urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
 
-                    handler: 'CacheFirst',
+                    handler: 'StaleWhileRevalidate',
             
                     options: {
 
@@ -129,18 +131,34 @@ module.exports = {
                         maxEntries: 15,
                       },
                     },
+                    method: 'GET'
                 },
                 {
-                    urlPattern: /\.(?:ogg|mp3|wav|mpe?g)$/,
+                    urlPattern: /\.(?:mp3)$/,
                     handler: 'CacheFirst',
-            
                     options: {
-                      cacheName: 'songs',
-            
-                      expiration: {
-                        maxEntries: 2,
-                            },
-                    }
+                        cacheName: 'music',
+                        expiration: {
+                            maxEntries: 15,
+                            maxAgeSeconds: 30 * 24 * 60 * 60
+                        }
+                    },
+                    method: 'GET'
+                },
+                {
+                    urlPattern: /^https?.*/,
+                    handler: 'NetworkFirst',
+                },
+                {
+                    urlPattern: /^https:\/\/fonts.(?:googleapis|gstatic).com\/(.*)/,
+                    handler: 'CacheFirst',
+                    options: {
+                        cacheName: 'google-fonts-cache',
+                        expiration:{
+                            maxAgeSeconds: 30 * 24 * 60 * 60
+                        },
+                    },
+                    method: 'GET'
                 },
             ]
         }),

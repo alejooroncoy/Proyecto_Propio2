@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 import '../assets/styles/components/header.scss';
 import Products_comprados from './products_comprados';
 import '../assets/styles/App.scss';
+import Icon2 from '../assets/static/fW.jpg';
 import Icon from '../assets/static/user-icon.png'
 const Header = props => {
     const { shopping_cart } = props;
@@ -26,7 +28,8 @@ const Header = props => {
     return(
         <header className="">
             <nav className="black headerF">
-                <a href="#" className="brand-logo center">Cervecería Wilmer</a>
+                <Link to="/" className="brand-logo center">Cervecería Wilmer
+                </Link>
                     <ul className="left hide-on-med-and-down">
                         <li><a href="#">Somos la primera licorería online netamente Peruana!!</a></li>
                     </ul>
@@ -49,7 +52,7 @@ const Header = props => {
                 <ul id="slide-out" className="sidenav">
                     <li><div className="user-view">
                         <div className="background">
-                            <img src="https://picsum.photos/400/500" alt="image"/>
+                            <img src={Icon2} alt="image"/>
                         </div>
                         <a href="#user"><img className="circle" src={Icon}/></a>
                         <a><span className="black-text name">{`Tienes ${shopping_cart_v > 0 ? shopping_cart_v: ningun} ${shopping_cart_v < 2 ? producto: productos} en el carrito.`}</span>

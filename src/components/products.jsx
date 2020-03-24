@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getToCar, isDBf} from '../actions';
+import {Link} from 'react-router-dom';
 import swal from '@sweetalert/with-react'
 import '../assets/styles/components/products.scss';
 const Products = props => {
@@ -71,7 +72,12 @@ const Products = props => {
       <>
         <div className="card col s12 m6 l6 xl3">
            <div className="card-image">
-               <img className="responsive-img" src={cover} alt={title} onClick = {alertf}/> 
+            <Link to={`/${id}`}>
+               <img className="responsive-img" 
+               src={cover} 
+               alt={title} 
+               /> 
+            </Link>
                 <a href="#" id="set_add" className="btn-floating pulse halfway-fab waveseffect waves-light black">
                 <i className="material-icons tiny com" 
                 id = {id}

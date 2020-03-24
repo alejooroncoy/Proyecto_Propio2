@@ -23,9 +23,11 @@ const Home = props => {
    };
    const cancion = new Audio(Fiesta);
    cheet('f i e s t a', () => {
+    console.log('decubriste');
        cancion.play();
    });
    cheet('f i n', () => {
+    console.log("ya fue:'c");
        cancion.pause();
    })
     const {products, shopping_cart, searching,isDB} = props;
