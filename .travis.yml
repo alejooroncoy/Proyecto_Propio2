@@ -22,8 +22,8 @@ notifications:
   on_failure: always
 
 deploy:
+  keep-history: true
+  skip_cleanup: true
   provider: firebase
   token:
     secure: $FIREBASE_TOKEN
-  project: "cerveW"
-  message: "Hola:3"
