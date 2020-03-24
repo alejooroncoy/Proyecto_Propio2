@@ -13,9 +13,7 @@ script:
   - echo "deploying"
   - yarn build
 install: 
-  - npm install -g firebase-tools
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN  
+  - npm install -g firebase-tools 
 notifications:
   email:
     recipients:
