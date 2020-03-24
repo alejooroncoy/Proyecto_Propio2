@@ -12,6 +12,7 @@ git:
 script:
   - echo "deploying"
   - yarn build
+  - firebase deploy --token $FIREBASE_TOKEN
 install: 
   - npm install -g firebase-tools 
 notifications:
@@ -21,9 +22,3 @@ notifications:
   on_success: always
   on_failure: always
 
-deploy:
-  keep-history: true
-  skip_cleanup: true
-  provider: firebase
-  token:
-    secure: $FIREBASE_TOKEN
