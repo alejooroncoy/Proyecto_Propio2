@@ -24,14 +24,33 @@ const Header = props => {
             outDuration: 400
         });
       });
-    
+      const title =  'Cervezería Wilmer'
+    const compartir = e => {
+        e.preventDefault();
+        if( !navigator.share)
+        {
+            alert("Soory:(");
+            return;
+        }
+        navigator.share({
+            title: `${title}`,
+            text: 'Comparte a otro Cervecero',
+            url: document.location.href,
+        })
+        .then(() => {
+            alert("enviado!")
+        })
+        .catch(() => {
+            alert("ups:(")
+        })
+    }
     return(
         <header className="">
             <nav className="black headerF">
-                <Link to="/" className="brand-logo center">Cervecería Wilmer
+                <Link to="/" className="brand-logo center">{title}
                 </Link>
                     <ul className="left hide-on-med-and-down">
-                        <li><a href="#">Somos la primera licorería online netamente Peruana!!</a></li>
+                        <li><a onClick={compartir}>Invita a mas Cerveceros como tú!</a></li>
                     </ul>
                     <ul className="right hide-on-med-and-down notification-button" >
                         <li><a href="#">Los mejores Licores</a>

@@ -106,7 +106,11 @@ module.exports = {
             }
         }),
          new WorboxWebpack.GenerateSW({
-            offlineGoogleAnalytics: true,
+            offlineGoogleAnalytics: {
+                parameterOverrides: {
+                    cd1: 'offline'
+                }
+            },
             skipWaiting: true,
             clientsClaim: true,
             swDest: 'service-worker.js',
@@ -130,18 +134,6 @@ module.exports = {
                       expiration: {
                         maxEntries: 15,
                       },
-                    },
-                    method: 'GET'
-                },
-                {
-                    urlPattern: /\.(?:mp3)$/,
-                    handler: 'CacheFirst',
-                    options: {
-                        cacheName: 'music',
-                        expiration: {
-                            maxEntries: 15,
-                            maxAgeSeconds: 30 * 24 * 60 * 60
-                        }
                     },
                     method: 'GET'
                 },
