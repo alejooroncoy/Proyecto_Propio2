@@ -1,6 +1,27 @@
 import React from 'react';
 import '../assets/styles/components/footer.scss'
-const Footer = () =>  (
+const Footer = () =>  {
+    const title = "Cervezería Wilmer";
+    const compartir = e => {
+        e.preventDefault();
+        if( !navigator.share)
+        {
+            alert("Soory:(");
+            return;
+        }
+        navigator.share({
+            title: `${title}`,
+            text: 'Comparte a otro Cervecero',
+            url: document.location.href,
+        })
+        .then(() => {
+            alert("enviado!")
+        })
+        .catch(() => {
+            alert("ups:(")
+        })
+    }
+    return(
     <footer className="page-footer black">
         <div className="row">
             <div className="col l6 s12">
@@ -10,6 +31,9 @@ const Footer = () =>  (
                 <p className="letter">
                     Si nuestro trabajo fue de su agrado! No dude en enviarnos un mensaje en nuestras principales fan-pages!
                 </p>
+                <button className="btn colorBtn" onClick={compartir}>
+                    Compartir:3
+                </button>
             </div>
             <div className="col l4 offset-l2 s12">
                 <h5 className="letter">
@@ -27,6 +51,6 @@ const Footer = () =>  (
                 <a className="letter right-footer" href="#">Actualizandonos a esta nueva era!</a>
           </div>
     </footer>
-);
+)};
 
 export default Footer;
