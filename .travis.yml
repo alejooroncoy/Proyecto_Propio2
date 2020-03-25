@@ -11,6 +11,8 @@ git:
   depth: 3
 script:
   - echo "deploying"
+  - yarn build
+before_script:
   - firebase deploy --token $FIREBASE_TOKEN
 install: 
   - npm install -g firebase-tools 
